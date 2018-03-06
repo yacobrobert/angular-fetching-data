@@ -1,0 +1,27 @@
+<h2>Tableau de clients</h2>
+<div>
+  Filtrer par : <input type="text" [(ngModel)]="searchTerm" placeholder="Mots clés ">
+</div>
+   <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>UserName</th>
+          <th>Email</th>
+          <th>details</th>
+        </tr>
+      </thead>  
+      <tbody>
+        <tr *ngFor="let client of clients | clientFilter:searchTerm">      
+          <td>{{ client.name }}</td>
+          <td>{{ client.username }}</td>
+          <td>{{ client.email }}</td>
+          <td>
+            <a [routerLink]="['/client', client.id]"  
+                style="cursor: pointer"> 
+                more details on Client {{client.id}}  
+            </a>
+        </td>
+        </tr>                
+      </tbody>
+  </table>

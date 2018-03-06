@@ -1,0 +1,110 @@
+<br>
+<div class="col-xs-12">
+   <div>
+        <a class="btn btn-default" [routerLink]="['/client', editedItemIndex]">
+                <i class='glyphicon glyphicon-arrow-left'></i> retour
+        </a>
+    </div>     
+<br>
+  <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+        <label for="id">Id</label>
+        <input type="number"
+                id="id"
+                class="form-control"
+                formControlName="id"
+                required>
+        <label for="name">Name</label>  
+        <input type="text"   
+                id="name"
+                class="form-control"
+                formControlName="name"
+                required> 
+        <label for="username">username</label>
+        <input type="text"   
+                id="name"
+                class="form-control"
+                formControlName="userName"
+                required>
+        <label for="email">email</label>
+        <input type="email"   
+                id="email"
+                class="form-control"
+                formControlName="email"
+                > 
+         <h3>Address</h3>
+        <label for="street">Street</label>
+        <input type="text"   
+                id="street"
+                class="form-control"
+                formControlName="street"
+                >        
+        <label for="suite">suite</label>
+        <input type="text"   
+                id="suite"
+                class="form-control"
+                formControlName="suite"
+                >         
+        <label for="city">city</label>
+        <input type="text"   
+                id="city"
+                class="form-control"
+                formControlName="city"> 
+        <label for="zipcode">zipcode</label>
+        <input type="text"   
+                id="zipcode"
+                class="form-control"
+                formControlName="zipcode"> 
+        <label for="lat">geo - lat</label>
+        <input type="number"   
+            id="lat"
+            class="form-control"
+            formControlName="lat"
+            >     
+        <label for="lng">geo - lng</label>
+        <input type="number"   
+            id="lng"
+            class="form-control"
+            formControlName="lng"
+            >  
+        <label for="phone">phone</label>
+        <input type="text"   
+            id="phone"
+            class="form-control"
+            formControlName="email"
+            > 
+        <label for="website">website</label>
+        <input type="text"   
+            id="website"
+            class="form-control"
+            formControlName="website"
+            > 
+        <h3>Company</h3> 
+        <label for="companyname">name</label>
+        <input type="text"   
+            id="companyname"
+            class="form-control"
+            formControlName="companyName"
+            > 
+        <label for="phrase">catchPhrase</label>
+        <input type="text"   
+            id="phrase"
+            class="form-control"
+            formControlName="phrase"
+            > 
+        <label for="bs">bs</label>
+        <input type="text"   
+            id="bs"
+            class="form-control"
+            formControlName="bs">         
+            <br>
+      <div class="row">
+          <div class="col-xs-12">
+            <button class="btn btn-success"
+            type="button"
+            (click)="onSubmit()">edit</button>
+            <button class="btn btn-danger">delete</button>
+            <button class="btn btn-primary">clear</button>
+          </div>
+      </div>      
+  </form>  
+</div>

@@ -1,0 +1,32 @@
+<br>
+<div>
+    <a class="btn btn-default" (click)="goBack()">
+      <i class='glyphicon glyphicon-arrow-left'></i> Retour
+    </a>
+</div>
+<br>   
+<br>
+<div *ngIf="!client">Pas de données client trouvée</div>
+
+<div *ngIf="client" class="panel panel-primary">
+  <div>
+    <a class="btn btn-danger" [routerLink]="['/editclient', client.id]">New / Edit</a>
+  </div> 
+  <div class="panel-heading"><b>Name : {{ client.name }}</b></div>
+  <ul class="list-group">
+    <li class="list-group-item">Username : {{ client.username }} </li>
+    <li class="list-group-item">Phone : {{ client.phone }}</li>
+    <li class="list-group-item">Website :  {{client.website }}</li>
+  </ul>  
+  <div class="panel-heading"><i>Address</i></div>
+  <ul class="list-group" *ngFor="let obj of client.address | ObjNgFor">
+    <li class="list-group-item">{{obj.key}} : {{obj.value}}</li>
+  </ul>
+  <ul *ngFor="let obj of client.address.geo | ObjNgFor">
+    <li class="list-group-item">{{obj.key}} : {{obj.value}}</li>
+  </ul> 
+  <div class="panel-heading"><i>Company</i></div>  
+  <ul class="list-group" *ngFor="let obj of client.company | ObjNgFor">
+    <li class="list-group-item">{{obj.key}} : {{obj.value}}</li>
+  </ul>
+</div>
